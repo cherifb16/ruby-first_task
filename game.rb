@@ -3,9 +3,19 @@ class Player
         puts "please select from below"
 	    puts "0: Goo"
 	    puts "1: Choki"
-        puts "2: Par"
-	    player_number = gets.to_i
-	    while player_number  >2 do
+		puts "2: Par"
+
+		player_number = gets.chomp
+		
+		begin
+			puts Integer(player_number)
+		rescue
+			puts 'please enter a number'
+			player_number = gets.chomp
+		end
+
+	   
+	    while player_number.to_i  >2 do
 	      puts "out of boundary chose from below:"
 	      player_number = gets.to_i
 	    end
@@ -24,7 +34,7 @@ end
   
 class Game 
   def pon(player_hand, enemy_hand)
-    difference = player_hand - enemy_hand
+    difference = player_hand.to_i - enemy_hand
 	final_answer =(difference + 3)%3
 	if final_answer == 2
 	  puts "You are the winner"
