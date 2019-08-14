@@ -5,8 +5,8 @@ class Player
 	    puts "1: Choki"
         puts "2: Par"
 	    player_number = gets.to_i
-	    while player_number > 2 || player_number < 0  do
-	      puts "Wrong number please try again:"
+	    while player_number  >2 do
+	      puts "out of boundary chose from below:"
 	      player_number = gets.to_i
 	    end
 	    puts "you chose #{player_number}"
